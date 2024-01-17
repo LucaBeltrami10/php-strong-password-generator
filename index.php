@@ -1,12 +1,14 @@
 <?php
 require_once 'function.php';
 session_start();
+$_SESSION['passwordGenerated'] = passwordGenerator($passwordLenght, $alfabetoMaiuscolo, $alfabetoMinuscolo);
 
 $passwordLenght = isset($_GET['passwordLenght']) ? $_GET['passwordLenght'] : 0;
 $alfabetoMinuscolo = range('a', 'z');
 $alfabetoMaiuscolo = range('A', 'Z');
 $numeri = range(0, 9);
 $simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',');
+
 
 ?>
 
@@ -25,7 +27,7 @@ $simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-'
 
 <body>
     <main class="m-5">
-        <form action="./index.php" method="get">
+        <form action="./showPassword.php" method="get">
             <div class="mb-3">
                 <label for="passwordLenght" class="form-label">Inserire lunghezza password</label>
                 <input type="number" class="form-control w-25" id="passwordLenght" name="passwordLenght" aria-describedby="passwordLenghtHelp">
