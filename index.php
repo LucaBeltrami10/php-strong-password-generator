@@ -11,9 +11,11 @@ function passwordGenerator($passwordLenght, $lettMai, $lettMin)
 {
     $array = array_merge($lettMai, $lettMin);
     $password = '';
-    if ($passwordLenght > 0) {
+    if ($passwordLenght > 1) {
         $arrayKey = array_rand($array, $passwordLenght);
         shuffle($arrayKey);
+    } elseif ($passwordLenght == 1) {
+        $arrayKey = array_rand($array, $passwordLenght);
     } else {
         $arrayKey = 0;
     }
@@ -26,7 +28,7 @@ function passwordGenerator($passwordLenght, $lettMai, $lettMin)
     } elseif ($passwordLenght == 1) {
         $password .= $array[$arrayKey];
     } elseif (intval($passwordLenght) == 0) {
-        $password .= 'inserire lunghezza password';
+        $password .= 'Ti consiglio di riconsiderare la lunghezza della password. Una password sicura contiene ALMENO un carattere.';
     }
 
     return $password;
@@ -53,16 +55,17 @@ function passwordGenerator($passwordLenght, $lettMai, $lettMin)
             <div class="mb-3">
                 <label for="passwordLenght" class="form-label">Inserire lunghezza password</label>
                 <input type="number" class="form-control w-25" id="passwordLenght" name="passwordLenght" aria-describedby="passwordLenghtHelp">
-                <div id="passwordLenghtHelp" class="form-text">Verrà generata una password del numero di caratteri
+                <div id="passwordLenghtHelp" class="form-text">Verrà generata una password con caratteri maiuscoli e
+                    minuscoli
                     inseriti
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Genera</button>
         </form>
-        <div class="prova"><?php echo $passwordLenght ?></div>
-        <div class="prova2">password:
-            <?php echo passwordGenerator($passwordLenght, $alfabetoMaiuscolo, $alfabetoMinuscolo) ?> </div>
-        <?php var_dump(passwordGenerator($passwordLenght, $alfabetoMaiuscolo, $alfabetoMinuscolo)) ?>
+        <div id="password" class="">
+            <p> La tua Password
+                è: <?php echo passwordGenerator($passwordLenght, $alfabetoMaiuscolo, $alfabetoMinuscolo) ?></p>
+        </div>
         </div>
     </main>
 </body>
