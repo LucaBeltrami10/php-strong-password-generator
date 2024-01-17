@@ -1,7 +1,7 @@
 <?php
 require_once 'function.php';
 session_start();
-$_SESSION['passwordGenerated'] = passwordGenerator($passwordLenght, $alfabetoMaiuscolo, $alfabetoMinuscolo);
+
 
 $passwordLenght = isset($_GET['passwordLenght']) ? $_GET['passwordLenght'] : 0;
 $alfabetoMinuscolo = range('a', 'z');
@@ -9,7 +9,7 @@ $alfabetoMaiuscolo = range('A', 'Z');
 $numeri = range(0, 9);
 $simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',');
 
-
+$_SESSION['passwordGenerated'] = passwordGenerator($passwordLenght, $alfabetoMaiuscolo, $alfabetoMinuscolo);
 ?>
 
 
