@@ -1,14 +1,26 @@
 <?php
 
 $passwordLenght = $_GET['passwordLenght'];
+$alfabetoMinuscolo = range('a', 'z');
 
 /* funzione per generazione password */
-function passwordGenerator($passwordLenght)
+function passwordGenerator($passwordLenght, $alfabetoMinuscolo)
 {
     $alfabetoMinuscolo = range('a', 'z');
     $alfabetoMaiuscolo = range('A', 'Z');
     $numeri = range(0, 9);
     $simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',');
+
+
+    $arrayKey = array_rand($alfabetoMinuscolo, $passwordLenght);
+
+    $password = '';
+    foreach ($arrayKey as $value) {
+        $password .= $alfabetoMinuscolo[$value];
+    };
+
+
+    return $password;
 }
 
 ?>
@@ -39,6 +51,7 @@ function passwordGenerator($passwordLenght)
             <button type="submit" class="btn btn-primary">Genera</button>
         </form>
         <div class="prova"><?php echo $passwordLenght ?></div>
+        <div class="prova2">password: <?php echo passwordGenerator($passwordLenght, $alfabetoMinuscolo) ?> </div>
     </main>
 </body>
 
