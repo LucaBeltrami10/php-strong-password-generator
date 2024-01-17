@@ -1,5 +1,6 @@
 <?php
 require_once 'function.php';
+session_start();
 
 $passwordLenght = isset($_GET['passwordLenght']) ? $_GET['passwordLenght'] : 0;
 $alfabetoMinuscolo = range('a', 'z');
@@ -35,7 +36,7 @@ $simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-'
             </div>
             <button type="submit" class="btn btn-primary">Genera</button>
         </form>
-        <div id="password" class="">
+        <div id="password" class="mt-5">
             <p> La tua Password
                 è: <?php echo passwordGenerator($passwordLenght, $alfabetoMaiuscolo, $alfabetoMinuscolo) ?></p>
         </div>
