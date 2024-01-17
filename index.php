@@ -1,6 +1,21 @@
 <?php
 
-$passwordLenght = $_GET['passwordLenght']
+$passwordLenght = $_GET['passwordLenght'];
+
+/* Pool array per creazione password */
+
+// Array con tutte le lettere dell'alfabeto minuscole
+$alfabetoMinuscolo = range('a', 'z');
+
+// Array con tutte le lettere dell'alfabeto maiuscole
+$alfabetoMaiuscolo = range('A', 'Z');
+
+// Array con i numeri da 0 a 9
+$numeri = range(0, 9);
+
+// Array con 20 simboli della tastiera più utilizzati
+$simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',');
+
 
 
 ?>
