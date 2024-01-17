@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ '/function.php';
 
 $passwordLenght = isset($_GET['passwordLenght']) ? $_GET['passwordLenght'] : 0;
 $alfabetoMinuscolo = range('a', 'z');
@@ -46,7 +47,8 @@ function passwordGenerator($passwordLenght, $lettMai, $lettMin)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -54,7 +56,8 @@ function passwordGenerator($passwordLenght, $lettMai, $lettMin)
         <form action="./index.php" method="get">
             <div class="mb-3">
                 <label for="passwordLenght" class="form-label">Inserire lunghezza password</label>
-                <input type="number" class="form-control w-25" id="passwordLenght" name="passwordLenght" aria-describedby="passwordLenghtHelp">
+                <input type="number" class="form-control w-25" id="passwordLenght" name="passwordLenght"
+                    aria-describedby="passwordLenghtHelp">
                 <div id="passwordLenghtHelp" class="form-text">Verrà generata una password con caratteri maiuscoli e
                     minuscoli
                     inseriti
