@@ -8,7 +8,7 @@ $numeri = range(0, 9);
 $simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',');
 
 /* funzione per generazione password */
-function passwordGenerator($passwordLenght, $lettMai, $lettMin)
+/* function passwordGenerator($passwordLenght, $lettMai, $lettMin)
 {
     $array = array_merge($lettMai, $lettMin);
     $password = '';
@@ -33,7 +33,7 @@ function passwordGenerator($passwordLenght, $lettMai, $lettMin)
     }
 
     return $password;
-}
+} */
 
 ?>
 
