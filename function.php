@@ -1,5 +1,13 @@
 <?php
+session_start();
 
+
+
+$passwordLenght = isset($_GET['passwordLenght']) ? $_GET['passwordLenght'] : 0;
+$alfabetoMinuscolo = range('a', 'z');
+$alfabetoMaiuscolo = range('A', 'Z');
+$numeri = range(0, 9);
+$simboli = array('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', ';', ':', ',');
 
 function passwordGenerator($passwordLenght, $lettMai, $lettMin)
 {
@@ -21,7 +29,7 @@ function passwordGenerator($passwordLenght, $lettMai, $lettMin)
         };
     } elseif ($passwordLenght == 1) {
         $password .= $array[$arrayKey];
-    } elseif (intval($passwordLenght) == 0) {
+    } elseif ($passwordLenght == 0) {
         $password .= 'Ti consiglio di riconsiderare la lunghezza della password. Una password sicura contiene ALMENO un carattere.';
     }
 
